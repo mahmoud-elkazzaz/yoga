@@ -1,0 +1,113 @@
+@import "config";
+
+.login__img {
+  width: 600px;
+  height: 750px;
+  background-image: url("../assets/yoga.jpg");
+  background-position: 75%;
+  background-size: cover;
+  align-self: flex-start;
+  justify-self: right;
+  border-radius: 20px;
+}
+
+.login {
+  min-height: 100vh;
+  background-color: #d6e5d9;
+  padding-top: 7vh;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 100px;
+
+  &__title {
+    margin-bottom: 50px;
+    text-align: center;
+    font-family: "Alkatra", cursive;
+  }
+
+  &__form {
+    width: 600px;
+    height: 600px;
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: $secondary-color;
+    padding: 50px;
+    position: relative;
+
+    &::before {
+      content: "";
+      width: 25%;
+      height: 3px; /* slight higher to work around rounding errors(?) on some zoom levels in some browsers. */
+      background-color: $primary-color;
+      position: absolute;
+      left: 0;
+      top: 0;
+      transform: translate(-73.5px, 75px) rotate(90deg);
+    }
+    &::after {
+      content: "";
+      width: 25%;
+      height: 3px; /* slight higher to work around rounding errors(?) on some zoom levels in some browsers. */
+      background-color: $primary-color;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+
+    &__field {
+      display: grid;
+      gap: 10px;
+      font-size: 24px;
+
+      &::before {
+        content: "";
+        width: 25%;
+        height: 3px; /* slight higher to work around rounding errors(?) on some zoom levels in some browsers. */
+        background-color: $primary-color;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        transform: translate(75px, -73.5px) rotate(90deg);
+      }
+      &::after {
+        content: "";
+        width: 25%;
+        height: 3px; /* slight higher to work around rounding errors(?) on some zoom levels in some browsers. */
+        background-color: $primary-color;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+      }
+
+      & > input {
+        border-style: none;
+        height: 60px;
+        font-size: 18px;
+        padding: 10px;
+        border-radius: 10px;
+      }
+    }
+
+    &__btn {
+      width: 35%;
+      height: 60px;
+      font-size: 20px;
+      margin: 0 auto;
+      border-style: none;
+      border-radius: 50px;
+      border: 0px solid black;
+      &:hover {
+        @include transition-ease;
+        background-color: $primary-color;
+        color: $secondary-color;
+      }
+    }
+  }
+
+  &__new {
+    font-size: 24px;
+    text-decoration: none;
+  }
+}
