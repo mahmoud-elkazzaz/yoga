@@ -15,7 +15,7 @@ const Header = () => {
     try {
       await logoutApiCall().unwrap();
       dispatch(logout());
-      navigate('/');
+      navigate('/login');
     } catch (error) {
       console.log(error);
     }
@@ -24,9 +24,19 @@ const Header = () => {
     <header>
       <Navbar bg="dark" variant="dark" expand="lg" collapseOnSelect>
         <Container>
-          <LinkContainer to="/">
-            <Navbar.Brand>MERN Auth</Navbar.Brand>
-          </LinkContainer>
+          {userInfo ? (
+            <>
+              <LinkContainer to="/">
+                <Navbar.Brand>Flexy Mind</Navbar.Brand>
+              </LinkContainer>
+            </>
+          ) : (
+            <>
+              <LinkContainer to="/login">
+                <Navbar.Brand>Flexy Mind</Navbar.Brand>
+              </LinkContainer>
+            </>
+          )}
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
@@ -36,7 +46,9 @@ const Header = () => {
                     <LinkContainer to="/profile">
                       <NavDropdown.Item>Profile</NavDropdown.Item>
                     </LinkContainer>
-                    <NavDropdown.Item onClick={logoutHandler}>Logout</NavDropdown.Item>
+                    <NavDropdown.Item onClick={logoutHandler}>
+                      Logout
+                    </NavDropdown.Item>
                   </NavDropdown>
                 </>
               ) : (

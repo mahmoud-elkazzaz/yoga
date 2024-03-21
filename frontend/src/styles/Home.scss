@@ -1,0 +1,14 @@
+@import './config.scss';
+
+.home {
+    background-color: darken($secondary-color, 2%); 
+  &__container {
+    padding: 10vh 0;
+
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: auto;
+    gap: 50px;
+  }
+}
