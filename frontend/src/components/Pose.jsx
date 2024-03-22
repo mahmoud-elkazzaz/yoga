@@ -3,7 +3,7 @@
 // import { LinkContainer } from "react-router-bootstrap";
 // import { Link } from "react-router-dom";
 import loveIcon from "./../assets/love.svg";
-import lovedIcon from "./../assets/loved.svg";
+import lovedIcon from "./../assets/favourite.svg";
 import learnIcon from "./../assets/learn.svg";
 import "../styles/pose.scss";
 import { useState } from "react";

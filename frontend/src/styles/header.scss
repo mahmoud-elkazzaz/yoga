@@ -1,0 +1,44 @@
+@import "config";
+
+.header {
+  height: 110px;
+  width: 100%;
+  background-color: darken($secondary-color, 4.5%);
+  &__nav {
+    height: 100%;
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__brand {
+      width: 20%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      &__logo {
+        width: 175px;
+      }
+      &__name {
+      }
+    }
+
+    &__menu {
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      &__container {
+        width: 20%;
+      }
+
+      &__icon {
+        width: 40px;
+
+        &--logout {
+            cursor: pointer;
+        }
+      }
+    }
+  }
+}
