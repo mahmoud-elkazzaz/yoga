@@ -93,10 +93,15 @@ const updateUserProfile = asyncHandler(async (req, res) => {
   }
 });
 
+const addFavourites = asyncHandler(async(req, res) => {
+  res.status(200).send("Favourites");
+})
+
 export {
   authUser,
   registerUser,
   logoutUser,
   getUserProfile,
   updateUserProfile,
+  addFavourites
 };

@@ -1,7 +1,7 @@
 @import "config";
 
 .header {
-  height: 110px;
+  height: 10vh;
   width: 100%;
   background-color: darken($secondary-color, 4.5%);
   &__nav {
@@ -18,7 +18,7 @@
       align-items: center;
       justify-content: space-between;
       &__logo {
-        width: 175px;
+        width: 50px;
       }
       &__name {
       }

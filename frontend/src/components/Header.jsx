@@ -7,7 +7,7 @@ import { logout } from "../slices/authSlice";
 import { useNavigate } from "react-router-dom";
 import "./../styles/header.scss";
 import { Link } from "react-router-dom";
-import logo_slogan from "./../assets/logo_slogan.png";
+import logo from "./../assets/logo.png";
 import favouriteIcon from "./../assets/favourite.svg";
 import profileIcon from "./../assets/profile.svg";
 import logoutIcon from "./../assets/logout.svg";
@@ -34,7 +34,7 @@ const Header = () => {
             <Link to="/">
               <img
                 className="header__nav__brand__logo"
-                src={logo_slogan}
+                src={logo}
                 alt="Flexy Mind Logo"
               />
             </Link>
@@ -42,91 +42,42 @@ const Header = () => {
             <Link to="/login">
               <img
                 className="header__nav__brand__logo"
-                src={logo_slogan}
+                src={logo}
                 alt="Flexy Mind Logo"
               />
             </Link>
           )}
         </div>
-        {userInfo && (
-          <div className="header__nav__menu__container">
-            <ul className="header__nav__menu">
-              <li>
-                <Link to="/">
-                  <img
-                    className="header__nav__menu__icon"
-                    src={favouriteIcon}
-                    alt="favourite"
-                  />
-                </Link>
-              </li>
-              <li>
-                <Link to="/profile">
-                  <img
-                    className="header__nav__menu__icon"
-                    src={profileIcon}
-                    alt="profile"
-                  />
-                </Link>
-              </li>
-              <li onClick={logoutHandler}>
+        <div className="header__nav__menu__container">
+          <ul className="header__nav__menu">
+            <li>
+              <Link to="/favourites">
                 <img
-                  className="header__nav__menu__icon header__nav__menu__icon--logout"
-                  src={logoutIcon}
-                  alt="logout"
+                  className="header__nav__menu__icon"
+                  src={favouriteIcon}
+                  alt="favourite"
                 />
-              </li>
-            </ul>
-          </div>
-        )}
+              </Link>
+            </li>
+            <li>
+              <Link to="/profile">
+                <img
+                  className="header__nav__menu__icon"
+                  src={profileIcon}
+                  alt="profile"
+                />
+              </Link>
+            </li>
+            <li onClick={logoutHandler}>
+              <img
+                className="header__nav__menu__icon header__nav__menu__icon--logout"
+                src={logoutIcon}
+                alt="logout"
+              />
+            </li>
+          </ul>
+        </div>
       </nav>
-      {/* <Navbar bg="dark" variant="dark" expand="lg" collapseOnSelect>
-        <Container>
-          {userInfo ? (
-            <>
-              <LinkContainer to="/">
-                <Navbar.Brand>Flexy Mind</Navbar.Brand>
-              </LinkContainer>
-            </>
-          ) : (
-            <>
-              <LinkContainer to="/login">
-                <Navbar.Brand>Flexy Mind</Navbar.Brand>
-              </LinkContainer>
-            </>
-          )}
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="ms-auto">
-              {userInfo ? (
-                <>
-                  <NavDropdown title={userInfo.name} id="username">
-                    <LinkContainer to="/profile">
-                      <NavDropdown.Item>Profile</NavDropdown.Item>
-                    </LinkContainer>
-                    <NavDropdown.Item onClick={logoutHandler}>
-                      Logout
-                    </NavDropdown.Item>
-                  </NavDropdown>
-                </>
-              ) : (
-                <>
-                  <LinkContainer to="/login">
-                    <Nav.Link>
-                      <FaSignInAlt /> Sign In
-                    </Nav.Link>
-                  </LinkContainer>
-                  <LinkContainer to="/register">
-                    <Nav.Link>
-                      <FaSignOutAlt /> Sign Up
-                    </Nav.Link>
-                  </LinkContainer>
-                </>
-              )}
-            </Nav>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar> */}
     </header>
   );
 };

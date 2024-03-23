@@ -25,7 +25,7 @@ const Pose = ({ englishName, img, id }) => {
             <div className="pose__icons__icon" onClick={likeId}>
               <img src={loveIcon} />
             </div>
-            <div className="pose__icons__text">love</div>
+            <div className="pose__icons__text">Love</div>
           </div>
           <div className="pose__icons">
             <div className="pose__icons__icon">

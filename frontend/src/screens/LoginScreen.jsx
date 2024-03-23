@@ -8,6 +8,7 @@ import { setCredentials } from "../slices/authSlice";
 import { toast } from "react-toastify";
 import Loader from "../components/Loader";
 import "../styles/LoginScreen.scss";
+import logo_slogan from "../assets/logo_slogan.png"
 
 const LoginScreen = () => {
   const [email, setEmail] = useState("");
@@ -40,9 +41,11 @@ const LoginScreen = () => {
   };
   return (
     <div className="login">
-      <div className="login__img"></div>
+      <div className="login__img">
+        <img src={logo_slogan}></img>
+      </div>
       <div className="login__container">
-        <h1 className="login__title">Sign In</h1>
+        {/* <h1 className="login__title">Sign In</h1> */}
         <form className="login__form" onSubmit={submitHandler}>
           <div className="login__form__field">
             <label htmlFor="email">Email:</label>
@@ -71,7 +74,7 @@ const LoginScreen = () => {
             Sign In
           </button>
           <div className="login__new">
-            New Customer? <Link to="/register">Register</Link>
+            New Flexy? <Link to="/register">Register</Link>
           </div>
         </form>
       </div>

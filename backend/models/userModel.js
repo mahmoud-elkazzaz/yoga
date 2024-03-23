@@ -14,6 +14,9 @@ const userSchema = mongoose.Schema({
     password: {
         type: String,
         require: true,
+    },
+    favourites: {
+        type: Array
     }
 }, {
     timestamps: true
